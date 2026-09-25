@@ -30,7 +30,7 @@ html, body{
 main{
     height: 100%;
     width: 100%;
-    background-color: var(--sec);
+    background-color: var(--tri2);
 }
 
 section.allEle{
@@ -43,7 +43,7 @@ section.allEle{
     flex-wrap: wrap;
     gap: 20px;
     position: absolute;
-    
+    overflow: auto;
 }
 .elems{
     width: 270px;
@@ -225,5 +225,48 @@ section.allEle{
 }
 .mark-imp label{
     font-size: 17px;
+    color: var(--text);
+}
+
+.daily-planner-fullpage h2{
+    color: var(--pri);
+    font-size: 40px;
+}
+.daily-planner-fullpage .day-planner{
+    background-color: var(--sec);
+    height: 85%;
+    margin-top: 30px;
+    width: 100%;
+    border-radius: 10px;
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: space-between;
+    overflow: auto;
+}
+.daily-planner-fullpage .day-planner .day-planner-time{
+    display: flex;
+    align-items: center;
+    position: relative;
+    width: 49%;
+    margin-bottom: 12px;
+    
+}
+.day-planner .day-planner-time p{
+    position: absolute;
+    top: 5%;
+    left: 1%;
+    color: var(--text);
+    
+}
+.day-planner .day-planner-time input{
+    padding: 20px 40px;
+    width: 100%;
+    background-color: var(--pri);
+    border-radius: 5px;
+    border: none;
+    font-size: 25px;
+    outline: none;
     color: var(--text);
 }

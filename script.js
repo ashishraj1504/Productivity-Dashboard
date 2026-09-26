@@ -156,3 +156,53 @@ function pomodoroTimer() {
   resetBtn.addEventListener("click", resetTimer);
 }
 pomodoroTimer();
+
+function dailyGoals() {
+  var currGoal = [];
+
+  if (localStorage.getItem("currGoal")) {
+    currGoal = JSON.parse(localStorage.getItem("currGoal"));
+  } else {
+    console.log("Goal list is empty");
+  }
+
+  function renderGoal() {
+    let allGoal = document.querySelector(".allgoal");
+    let sum = "";
+    currGoal.forEach(function (elem, idx) {
+      sum += `<div class="goal">
+                    <h5>${elem.goal}<span class="${elem.imp}">imp</span></h5>
+                    <button id="${idx}">Mark as Completed</button>
+                </div>`;
+    });
+    allGoal.innerHTML = sum;
+
+    localStorage.setItem("currGoal", JSON.stringify(currGoal));
+    document.querySelectorAll(".goal button").forEach(function (btn) {
+      btn.addEventListener("click", function () {
+        currGoal.splice(btn.id, 1);
+        renderGoal();
+      });
+    });
+  }
+  renderGoal();
+
+  let form = document.querySelector(".addgoal form");
+  let goalInput = document.querySelector(".addgoal form #goal-input");
+  let goalDetailInput = document.querySelector(".addgoal form textarea");
+  let goalCheckbox = document.querySelector(".addgoal form #check");
+
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+    currGoal.push({
+      goal: goalInput.value,
+      details: goalDetailInput.value,
+      imp: goalCheckbox.checked,
+    });
+    renderGoal();
+    goalInput.value = "";
+    goalDetailInput.value = "";
+    goalCheckbox.checked = false;
+  });
+}
+dailyGoals();

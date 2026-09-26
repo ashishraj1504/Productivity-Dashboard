@@ -4,6 +4,7 @@
   --tri1: #d7c0ae;
   --tri2: #967e76;
   --text: #4d3128;
+  --text1: rgb(226, 221, 218);
 }
 @font-face {
   font-family: normal;
@@ -38,13 +39,21 @@ section.allEle {
   width: 100%;
   height: 100%;
   padding: 40px;
-  padding-top: 60px;
-  background-color: var(--tri2);
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
   position: absolute;
   overflow: auto;
+}
+.allEle header{
+  height: 300px;
+  width: 100%;
+  margin-bottom: 20px;
+  border-radius: 20px;
+  background-color: var(--tri1);
+}
+.allEle .allFeatures{
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: 20px;
 }
 .elems {
   width: 270px;
@@ -229,7 +238,7 @@ section.allEle {
 }
 
 .daily-planner-fullpage h2 {
-  color: var(--pri);
+  color: rgb(226, 221, 218);
   font-size: 40px;
 }
 .daily-planner-fullpage .day-planner {
@@ -336,7 +345,7 @@ section.allEle {
 }
 .Pomodoro-fullpage h2{
     font-size: 45px;
-    color: var(--pri);
+    color: var(--text1);
     font-weight: 500;
 }
 .Pomodoro-fullpage .pomo-timer{
@@ -364,4 +373,130 @@ section.allEle {
 }
 .pomo-timer button:active{
     box-shadow: 0px 0px 0px black;
+}
+
+.Daily-goals-fullpage .goal-container {
+  height: 85%;
+  width: 100%;
+  margin-top: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.goal-container .addgoal {
+  width: 35%;
+  height: 100%;
+  border-radius: 20px;
+  background-color: var(--pri);
+  display: block;
+}
+
+.goal-container .addgoal form {
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 30px;
+}
+.goal-container .addgoal form input#goal-input {
+  width: 100%;
+  padding: 15px 20px;
+  font-size: 20px;
+  margin-bottom: 20px;
+  border: none;
+  border-radius: 10px;
+  background-color: var(--sec);
+  outline: none;
+}
+.goal-container .addgoal form textarea {
+  width: 100%;
+  padding: 15px 20px;
+  font-size: 20px;
+  height: 250px;
+  margin-bottom: 20px;
+  border: none;
+  border-radius: 10px;
+  background-color: var(--sec);
+  outline: none;
+}
+.goal-container .addgoal form button {
+  width: 100%;
+  padding: 15px 20px;
+  font-size: 20px;
+  margin-bottom: 20px;
+  border: none;
+  border-radius: 10px;
+  background-color: var(--tri1);
+  outline: none;
+  font-weight: 600;
+  color: var(--text);
+  transition: all ease 0.2s;
+  cursor: pointer;
+}
+.goal-container .addgoal form button:active {
+  scale: 0.96;
+}
+.goal-container .allgoal {
+  width: 63%;
+  height: 100%;
+  border-radius: 20px;
+  background-color: var(--pri);
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  overflow: auto;
+}
+.goal-container .allgoal .goal {
+  margin-top: 20px;
+  background-color: var(--sec);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  border-radius: 8px;
+}
+.allgoal .goal h5 {
+  font-size: 18px;
+  font-weight: 500;
+  color: var(--text);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.goal h5 span {
+  background-color: red;
+  color: var(--text);
+  padding: 4px 6px;
+  border-radius: 50px;
+  font-size: 8px;
+}
+.goal h5 span.true {
+  opacity: 1;
+}
+.goal h5 span.false {
+  opacity: 0;
+}
+.allgoal .task button {
+  padding: 5px 7px;
+  color: var(--sec);
+  background-color: green;
+  font-weight: 500;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+}
+.addgoal .mark-imp {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 5px 5px;
+  margin-bottom: 20px;
+  width: 100%;
+  gap: 20px;
+}
+.allgoal .goal button{
+  border: none;
+  background-color: rgb(36, 199, 36);
+  padding: 5px 10px;
+  border-radius: 5px;
 }

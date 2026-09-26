@@ -313,7 +313,7 @@ section.allEle {
 }
 .motivation-2 {
   padding: 10px;
-  margin-top: 10px;
+  margin-top: 20px;
 }
 .motivation-2 h1 {
   font-size: 35px;
@@ -324,9 +324,44 @@ section.allEle {
 .motivation-3 {
   padding: 30px;
   border-radius: 30px;
-  margin-top: 20px;
+  margin-top: 10px;
 }
 .motivation-3 h2 {
   color: var(--text);
   text-align: right;
+}
+
+.Pomodoro-fullpage{
+    position: relative;
+}
+.Pomodoro-fullpage h2{
+    font-size: 45px;
+    color: var(--pri);
+    font-weight: 500;
+}
+.Pomodoro-fullpage .pomo-timer{
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    text-align: center;
+}
+.pomo-timer h1{
+    font-size: 125px;
+    font-weight: 500;
+    color: white;
+}
+.pomo-timer button{
+    background-color: var(--sec);
+    padding: 10px 20px;
+    font-size: 20px;
+    border: none;
+    border-radius: 5px;
+    margin: 10px;
+    box-shadow: 5px 5px 0px black;
+    transition: all ease 0.2s;
+    font-weight: 500;
+}
+.pomo-timer button:active{
+    box-shadow: 0px 0px 0px black;
 }

@@ -115,5 +115,44 @@ function motivationalQuote() {
   }
   fetchQuote();
 }
-
 motivationalQuote();
+
+function pomodoroTimer() {
+  let timer = document.querySelector(".pomo-timer h1");
+  var startBtn = document.querySelector(".pomo-timer .start");
+  var pauseBtn = document.querySelector(".pomo-timer .pause");
+  var resetBtn = document.querySelector(".pomo-timer .reset");
+  let timerInterval = null;
+
+  let totalSec = 1500;
+  function updateTimer() {
+    let min = Math.floor(totalSec / 60);
+    let sec = totalSec % 60;
+
+    timer.innerHTML = `${String(min).padStart("2", "0")}:${String(sec).padStart("2", "0")}`;
+  }
+  function startTimer() {
+    clearInterval(timerInterval);
+    timerInterval = setInterval(function () {
+      if (totalSec > 0) {
+        totalSec--;
+        updateTimer();
+      } else {
+        resetTimer();
+      }
+    }, 1000);
+  }
+
+  function pauseTimer() {
+    clearInterval(timerInterval);
+  }
+  function resetTimer() {
+    clearInterval(timerInterval);
+    totalSec = 25 * 60;
+    updateTimer();
+  }
+  startBtn.addEventListener("click", startTimer);
+  pauseBtn.addEventListener("click", pauseTimer);
+  resetBtn.addEventListener("click", resetTimer);
+}
+pomodoroTimer();

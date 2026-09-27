@@ -21,6 +21,7 @@
 * {
   margin: 0;
   padding: 0;
+  -webkit-box-sizing: border-box;
   box-sizing: border-box;
   font-family: normal;
 }
@@ -43,53 +44,64 @@ section.allEle {
   overflow: auto;
 }
 .allEle header {
-    width: 100%;
-    background-image: url(https://images.unsplash.com/photo-1717361279773-b2e7ee713d2e?q=80&w=3869&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
-    background-size: cover;
-    background-position: center;
-    margin-bottom: 20px;
-    border-radius: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 35px 50px;
+  width: 100%;
+  background-image: url(https://images.unsplash.com/photo-1717361279773-b2e7ee713d2e?q=80&w=3869&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
+  background-size: cover;
+  background-position: center;
+  margin-bottom: 20px;
+  border-radius: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  padding: 35px 50px;
 }
 header .header1 h1 {
-    font-size: 80px;
-    font-weight: 700;
-    margin-bottom: 60px;
+  font-size: 80px;
+  font-weight: 700;
+  margin-bottom: 60px;
 }
 
 header .header1 h2 {
-    font-size: 40px;
-    font-weight: 500;
+  font-size: 40px;
+  font-weight: 500;
 }
 
 header .header1 h4 {
-    font-weight: 500;
-    font-size: 40px;
+  font-weight: 500;
+  font-size: 40px;
 }
 
 header .header2 h2 {
-    font-weight: 700;
-    font-size: 70px;
+  font-weight: 700;
+  font-size: 70px;
 }
 
 header .header2 h4 {
-    font-weight: 500;
-    margin-top: -10px;
-    margin-bottom: 45px;
-    font-size: 40px;
+  font-weight: 500;
+  margin-top: -10px;
+  margin-bottom: 45px;
+  font-size: 40px;
 }
 
 header .header2 h3 {
-    font-weight: 500;
-    font-size: 20px;
-    opacity: 0.8;
+  font-weight: 500;
+  font-size: 20px;
+  opacity: 0.8;
 }
-.allEle .allFeatures{
+.allEle .allFeatures {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -ms-flex-wrap: wrap;
   flex-wrap: wrap;
+  -webkit-box-align: start;
+  -ms-flex-align: start;
   align-items: flex-start;
   gap: 20px;
 }
@@ -100,12 +112,14 @@ header .header2 h3 {
   background-color: var(--pri);
   overflow: hidden;
   position: relative;
+  -webkit-transition: all ease 0.2s;
   transition: all ease 0.2s;
   cursor: pointer;
 }
 .elems img {
   height: 100%;
   width: 100%;
+  -o-object-fit: cover;
   object-fit: cover;
 }
 .elems h2 {
@@ -143,6 +157,7 @@ header .header2 h3 {
   border-radius: 20px;
   border: none;
   cursor: pointer;
+  -webkit-transition: all ease 0.2s;
   transition: all ease 0.2s;
 }
 .back:hover {
@@ -152,8 +167,14 @@ header .header2 h3 {
   height: 85%;
   width: 100%;
   margin-top: 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
   justify-content: space-between;
 }
 .todo-fullpage .task-container .addtask {
@@ -166,8 +187,15 @@ header .header2 h3 {
 
 .todo-fullpage .task-container .addtask form {
   margin-top: 40px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
   flex-direction: column;
+  -webkit-box-align: start;
+  -ms-flex-align: start;
   align-items: flex-start;
   padding: 30px;
 }
@@ -203,6 +231,7 @@ header .header2 h3 {
   outline: none;
   font-weight: 600;
   color: var(--text);
+  -webkit-transition: all ease 0.2s;
   transition: all ease 0.2s;
   cursor: pointer;
 }
@@ -215,15 +244,26 @@ header .header2 h3 {
   border-radius: 20px;
   background-color: var(--pri);
   padding: 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
   flex-direction: column;
   overflow: auto;
 }
 .todo-fullpage .task-container .alltask .task {
   margin-top: 20px;
   background-color: var(--sec);
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
   justify-content: space-between;
   padding: 10px;
   border-radius: 8px;
@@ -232,7 +272,11 @@ header .header2 h3 {
   font-size: 18px;
   font-weight: 500;
   color: var(--text);
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
   gap: 10px;
 }
@@ -259,8 +303,14 @@ header .header2 h3 {
   cursor: pointer;
 }
 .addtask .mark-imp {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
   justify-content: flex-start;
   padding: 5px 5px;
   margin-bottom: 20px;
@@ -286,14 +336,25 @@ header .header2 h3 {
   width: 100%;
   border-radius: 10px;
   padding: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -ms-flex-wrap: wrap;
   flex-wrap: wrap;
+  -webkit-box-align: start;
+  -ms-flex-align: start;
   align-items: flex-start;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
   justify-content: space-between;
   overflow: auto;
 }
 .daily-planner-fullpage .day-planner .day-planner-time {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
   position: relative;
   width: 49%;
@@ -326,6 +387,8 @@ header .header2 h3 {
   border-radius: 50px;
   top: 50%;
   left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
 }
 .Motivational-fullpage .motivation-container::after {
@@ -336,6 +399,7 @@ header .header2 h3 {
   border-radius: 50px;
   scale: 1.2;
   background-color: var(--pri);
+  -webkit-filter: blur(100px);
   filter: blur(100px);
   z-index: 8;
 }
@@ -352,6 +416,8 @@ header .header2 h3 {
   background-color: var(--tri1);
   padding: 30px;
   border-radius: 30px;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
   width: fit-content;
 }
 .motivation-1 h2 {
@@ -366,7 +432,6 @@ header .header2 h3 {
   font-size: 35px;
   font-weight: 700;
   color: var(--text);
-  
 }
 .motivation-3 {
   padding: 30px;
@@ -378,47 +443,58 @@ header .header2 h3 {
   text-align: right;
 }
 
-.Pomodoro-fullpage{
-    position: relative;
+.Pomodoro-fullpage {
+  position: relative;
 }
-.Pomodoro-fullpage h2{
-    font-size: 45px;
-    color: var(--text1);
-    font-weight: 500;
+.Pomodoro-fullpage h2 {
+  font-size: 45px;
+  color: var(--text1);
+  font-weight: 500;
 }
-.Pomodoro-fullpage .pomo-timer{
-    position: absolute;
-    top: 45%;
-    left: 50%;
-    transform: translate(-50%,-50%);
-    text-align: center;
+.Pomodoro-fullpage .pomo-timer {
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  text-align: center;
 }
-.pomo-timer h1{
-    font-size: 125px;
-    font-weight: 500;
-    color: white;
+.pomo-timer h1 {
+  font-size: 125px;
+  font-weight: 500;
+  color: white;
 }
-.pomo-timer button{
-    background-color: var(--sec);
-    padding: 10px 20px;
-    font-size: 20px;
-    border: none;
-    border-radius: 5px;
-    margin: 10px;
-    box-shadow: 5px 5px 0px black;
-    transition: all ease 0.2s;
-    font-weight: 500;
+.pomo-timer button {
+  background-color: var(--sec);
+  padding: 10px 20px;
+  font-size: 20px;
+  border: none;
+  border-radius: 5px;
+  margin: 10px;
+  -webkit-box-shadow: 5px 5px 0px black;
+  box-shadow: 5px 5px 0px black;
+  -webkit-transition: all ease 0.2s;
+  transition: all ease 0.2s;
+  font-weight: 500;
 }
-.pomo-timer button:active{
-    box-shadow: 0px 0px 0px black;
+.pomo-timer button:active {
+  -webkit-box-shadow: 0px 0px 0px black;
+  box-shadow: 0px 0px 0px black;
 }
 
 .Daily-goals-fullpage .goal-container {
   height: 85%;
   width: 100%;
   margin-top: 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
   justify-content: space-between;
 }
 .goal-container .addgoal {
@@ -431,8 +507,15 @@ header .header2 h3 {
 
 .goal-container .addgoal form {
   margin-top: 40px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
   flex-direction: column;
+  -webkit-box-align: start;
+  -ms-flex-align: start;
   align-items: flex-start;
   padding: 30px;
 }
@@ -468,6 +551,7 @@ header .header2 h3 {
   outline: none;
   font-weight: 600;
   color: var(--text);
+  -webkit-transition: all ease 0.2s;
   transition: all ease 0.2s;
   cursor: pointer;
 }
@@ -480,15 +564,26 @@ header .header2 h3 {
   border-radius: 20px;
   background-color: var(--pri);
   padding: 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
   flex-direction: column;
   overflow: auto;
 }
 .goal-container .allgoal .goal {
   margin-top: 20px;
   background-color: var(--sec);
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
   justify-content: space-between;
   padding: 10px;
   border-radius: 8px;
@@ -497,7 +592,11 @@ header .header2 h3 {
   font-size: 18px;
   font-weight: 500;
   color: var(--text);
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
   gap: 10px;
 }
@@ -524,15 +623,21 @@ header .header2 h3 {
   cursor: pointer;
 }
 .addgoal .mark-imp {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
   justify-content: flex-start;
   padding: 5px 5px;
   margin-bottom: 20px;
   width: 100%;
   gap: 20px;
 }
-.allgoal .goal button{
+.allgoal .goal button {
   border: none;
   background-color: rgb(36, 199, 36);
   padding: 5px 10px;

@@ -206,3 +206,69 @@ function dailyGoals() {
   });
 }
 dailyGoals();
+
+function weatherFunctionality() {
+
+
+    // I have removed API key for security purpose
+    var apiKey = "API"
+    var city = 'Bhopal'
+
+    var header1Time = document.querySelector('.header1 h1')
+    var header1Date = document.querySelector('.header1 h2')
+    var header2Temp = document.querySelector('.header2 h2')
+    var header2Condition = document.querySelector('.header2 h4')
+    var precipitation = document.querySelector('.header2 .precipitation')
+    var humidity = document.querySelector('.header2 .humidity')
+    var wind = document.querySelector('.header2 .wind')
+
+    var data = null
+    
+    async function weatherAPICall() {
+        var response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}`)
+        data = await response.json()
+        console.log(data);
+        
+        header2Temp.innerHTML = `${data.main.temp-273}°C`
+        header2Condition.innerHTML = `${data.weather[0].description}`
+        wind.innerHTML = `Wind: ${data.wind.speed} km/h`
+        humidity.innerHTML = `Humidity: ${data.main.humidity}%`
+        precipitation.innerHTML = `Temp Feels Like : ${data.main.feels_like}%`
+    }
+
+    weatherAPICall()
+
+
+    function timeDate() {
+        const totalDaysOfWeek = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+
+        const monthNames = [
+            "January", "February", "March", "April", "May", "June",
+            "July", "August", "September", "October", "November", "December"
+        ];
+        var date = new Date()
+        var dayOfWeek = totalDaysOfWeek[date.getDay()]
+        var hours = date.getHours()
+        var minutes = date.getMinutes()
+        var seconds = date.getSeconds()
+        var tarik = date.getDate()
+        var month = monthNames[date.getMonth()]
+        var year = date.getFullYear()
+
+        header1Date.innerHTML = `${tarik} ${month}, ${year}`
+
+        if (hours > 12) {
+            header1Time.innerHTML = `${dayOfWeek}, ${String(hours - 12).padStart('2', '0')}:${String(minutes).padStart('2', '0')}:${String(seconds).padStart('2', '0')} PM`
+
+        } else {
+            header1Time.innerHTML = `${dayOfWeek}, ${String(hours).padStart('2', '0')}:${String(minutes).padStart('2', '0')}:${String(seconds).padStart('2', '0')} AM`
+        }
+    }
+
+    setInterval(() => {
+        timeDate()
+    }, 1000);
+
+}
+
+weatherFunctionality()
